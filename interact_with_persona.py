@@ -2,28 +2,38 @@ import json
 import random
 import os
 import sys
+from dotenv import load_dotenv
+load_dotenv()
 
 # Try to import openai, but don't fail if it's missing
 try:
-    import openai
+    from openai import AzureOpenAI
 except ImportError:
     openai = None
 
+OPENAI_KEY = os.getenv("OPENAI_KEY")
+OPENAI_VERSION = os.getenv("OPENAI_VERSION")
+OPENAI_ENDPOINT = os.getenv("OPENAI_ENDPOINT")
+
+
+# ---------------- LOADING PROFILES ----------------
 def load_profiles(filepath="synthetic_profiles.json"):
     if not os.path.exists(filepath):
         print(f"Error: {filepath} not found. Please run generate_persona.py first.")
         sys.exit(1)
-    
     with open(filepath, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+
+# ---------------- SYSTEM PROMPT GENERATION ----------------
 def generate_system_prompt(profile):
     demo = profile['demographics']
     pol = profile['political_identity']
     dig = profile['digital_behavior']
     geo = profile['geographic_context']
 
-    prompt = f"""You are a synthetic voter profile from Tamil Nadu, India. You must act, speak, and think exactly like this persona. Do not break character.
+    return f"""
+You are a synthetic voter profile from Tamil Nadu, India. You must act, speak, and think exactly like this persona. Do not break character.
 
 --- PERSONA DETAILS ---
 
@@ -48,76 +58,93 @@ def generate_system_prompt(profile):
    - Local Issues: {geo.get('local_issues')}
 
 --- INSTRUCTIONS ---
-- Respond to questions based ONLY on your demographics, political leanings, and local context.
-- Use a tone appropriate for your age and engagement style (e.g., if 'Angry', be critical; if 'Passive', be brief).
-- If asked about local issues, refer to your location and inferred context.
-- Do not mention that you are an AI. You are a citizen of {demo.get('location')}.
+- Respond only using your demographic, political, and local context.
+- Use tone matching engagement style.
+- Never say you are AI. You are a citizen of {demo.get('location')}.
 """
-    return prompt
 
-def chat_loop(profile):
+
+# ---------------- STORE Q&A IN TEXT FILE ----------------
+def save_to_file(question, answer, filepath="conversation_log.txt"):
+    with open(filepath, "a", encoding="utf-8") as log:
+        log.write("\n============================\n")
+        log.write(f"QUESTION: {question}\n")
+        log.write(f"ANSWER: {answer}\n")
+        log.write("============================\n")
+
+
+# ---------------- CHAT LOOP ----------------
+def chat_loop(profile, question=None):
     system_prompt = generate_system_prompt(profile)
-    
+
     print("\n" + "="*60)
     print("GENERATED SYSTEM PROMPT")
     print("="*60)
     print(system_prompt)
     print("="*60 + "\n")
 
-    api_key = os.getenv("OPENAI_API_KEY")
-    
-    if openai and api_key:
-        print(">> OpenAI library detected and API key found. Starting real interaction...")
-        client = openai.OpenAI(api_key=api_key)
+    if AzureOpenAI and OPENAI_KEY:
+        print(">> Starting real interaction with persona...")
+        client = AzureOpenAI(
+            api_key=OPENAI_KEY,
+            api_version=OPENAI_VERSION,
+            azure_endpoint=OPENAI_ENDPOINT,
+        )
+
         messages = [{"role": "system", "content": system_prompt}]
-        
         print("Type 'quit' to exit.\n")
+
         while True:
             try:
-                user_input = input("You: ")
+                user_input = question if question else input("You: ")
                 if user_input.lower() in ['quit', 'exit']:
                     break
-                
+
                 messages.append({"role": "user", "content": user_input})
-                
+
+                # --- Send question to model ---
                 response = client.chat.completions.create(
-                    model="gpt-3.5-turbo",
+                    model="gpt-4.1-mini",
                     messages=messages
                 )
-                
+
                 reply = response.choices[0].message.content
                 print(f"Persona: {reply}")
+
                 messages.append({"role": "assistant", "content": reply})
-                
+
+                # --- Store the Q&A in text file ---
+                save_to_file(user_input, reply)
+                return reply
+
             except KeyboardInterrupt:
                 print("\nExiting...")
                 break
             except Exception as e:
-                print(f"Error during API call: {e}")
-                break
-    else:
-        print(">> NOTE: 'openai' library not found or OPENAI_API_KEY not set.")
-        print(">> Running in MOCK mode. The persona will not actually reply, but you can see the prompt above.")
-        print(">> To enable real interaction, install openai (`pip install openai`) and set OPENAI_API_KEY environment variable.")
-        print("-" * 60)
-        print("Type 'quit' to exit.\n")
-        
-        while True:
-            try:
-                user_input = input("You: ")
-                if user_input.lower() in ['quit', 'exit']:
-                    break
-                print(f"Persona (Mock): [I would reply acting as a {profile['demographics']['age']} year old {profile['demographics']['gender']}...]")
-            except KeyboardInterrupt:
-                print("\nExiting...")
+                print(f"Error: {e}")
                 break
 
+    else:
+        print(">> MOCK MODE (missing library or API key).")
+        print("Type 'quit' to exit.\n")
+
+        while True:
+            user_input = input("You: ")
+            if user_input.lower() in ['quit', 'exit']:
+                break
+            
+            mock_reply = f"[Mock Persona Reply based on age {profile['demographics']['age']}]"
+            print(f"Persona (Mock): {mock_reply}")
+
+            save_to_file(user_input, mock_reply)
+
+
+# ---------------- MAIN ----------------
 if __name__ == "__main__":
     profiles = load_profiles()
     if not profiles:
-        print("No profiles found in JSON.")
+        print("No profiles found.")
         sys.exit(1)
-    
-    # Select a random profile
+
     selected_profile = random.choice(profiles)
-    chat_loop(selected_profile)
+    # chat_loop(selected_profile)
