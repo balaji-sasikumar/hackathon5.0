@@ -1,0 +1,11 @@
+﻿Sno,Street No,Name,Relation Type,Relation Name,House No,Age,Gender,Voter Id,Voter Box,File Name,Addition Page,Ac Code,Constituency Name,Constituency No
+1,12,Ramesh Kumar,Father,K. Gopal,23A,34,M,ABC1234567,Box-12,part1.pdf,4,112,Coimbatore South,22
+2,7,S. Lakshmi,Husband,R. Murugan,45,28,F,XYZ9081726,Box-08,part2.pdf,5,118,Salem North,14
+3,19,M. Hari Prasad,Mother,S. Rajeshwari,10B,42,M,BCD7628193,Box-03,part1.pdf,2,101,Erode East,36
+4,4,J. Priya,Father,J. Kumar,77,31,F,LMN5671203,Box-15,part3.pdf,1,130,Chennai Central,17
+5,22,A. Vijay,Wife,A. Kaviya,5C,27,M,PQR8123091,Box-06,part1.pdf,3,142,Madurai West,28
+6,9,K. Kavitha,Husband,K. Ramesh,42,38,F,TUV9217438,Box-02,part4.pdf,2,155,Tiruppur North,44
+7,31,R. Manikandan,Father,R. Elangovan,88A,46,M,DEF3459082,Box-09,part2.pdf,6,121,Karur,20
+8,16,P. Divya,Husband,P. Sankar,12,29,F,GHI7801345,Box-07,part1.pdf,4,109,Namakkal,18
+9,27,S. Arun,Mother,S. Kanchana,6B,33,M,ZXC2317648,Box-10,part3.pdf,3,135,Vellore,11
+10,3,M. Nandhini,Father,M. Balakrishnan,2A,25,F,QWE9182736,Box-05,part2.pdf,5,140,Dindigul,32

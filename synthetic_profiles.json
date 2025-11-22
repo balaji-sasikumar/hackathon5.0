@@ -1,0 +1,209 @@
+[
+    {
+        "demographics": {
+            "age": "34",
+            "gender": "M",
+            "location": "Gandhi St, Coimbatore, AC112",
+            "family_status": "Father of Gopal"
+        },
+        "political_identity": {
+            "party_member": "TRUE (Renewed: TRUE)",
+            "constituency_history": "District: Coimbatore. Winner: Unknown (Unknown)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "Interested in Literacy Mission campaigns, hashtags: #karur",
+            "engagement_patterns": "Active volunteer. Likes: 35, Retweets: 3",
+            "emotional_tendencies": "High engagement, likely positive sentiment"
+        },
+        "geographic_context": {
+            "booth_number": "22",
+            "constituency": "AC112 - 112",
+            "local_issues": "Inferred from Coimbatore context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "28",
+            "gender": "F",
+            "location": "Anna Nagar, Salem, AC118",
+            "family_status": "Husband of Ramesh"
+        },
+        "political_identity": {
+            "party_member": "FALSE (Renewed: FALSE)",
+            "constituency_history": "District: Salem. Winner: Diya Chand (INC)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "Interested in Health Awareness campaigns, hashtags: #coimbatore",
+            "engagement_patterns": "Active volunteer. Likes: 38, Retweets: 6",
+            "emotional_tendencies": "High engagement, likely positive sentiment"
+        },
+        "geographic_context": {
+            "booth_number": "14",
+            "constituency": "AC118 - 118",
+            "local_issues": "Inferred from Salem context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "46",
+            "gender": "M",
+            "location": "Mettu Street, Chennai, AC130",
+            "family_status": "Father of Elangovan"
+        },
+        "political_identity": {
+            "party_member": "TRUE (Renewed: TRUE)",
+            "constituency_history": "District: Chennai. Winner: Unknown (Unknown)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "General news, local updates",
+            "engagement_patterns": "Passive observer, low interaction",
+            "emotional_tendencies": "Neutral"
+        },
+        "geographic_context": {
+            "booth_number": "9",
+            "constituency": "AC130 - 130",
+            "local_issues": "Inferred from Chennai context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "31",
+            "gender": "F",
+            "location": "VOC Colony, Madurai, AC142",
+            "family_status": "Father of Kumar"
+        },
+        "political_identity": {
+            "party_member": "FALSE (Renewed: FALSE)",
+            "constituency_history": "District: Madurai. Winner: Taimur Jhaveri (INC)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "General news, local updates",
+            "engagement_patterns": "Passive observer, low interaction",
+            "emotional_tendencies": "Neutral"
+        },
+        "geographic_context": {
+            "booth_number": "5",
+            "constituency": "AC142 - 142",
+            "local_issues": "Inferred from Madurai context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "33",
+            "gender": "M",
+            "location": "Rajaji Street, Vellore, AC135",
+            "family_status": "Mother of Kanchana"
+        },
+        "political_identity": {
+            "party_member": "TRUE (Renewed: TRUE)",
+            "constituency_history": "District: Vellore. Winner: Aaina Lala (AMMK)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "General news, local updates",
+            "engagement_patterns": "Passive observer, low interaction",
+            "emotional_tendencies": "Neutral"
+        },
+        "geographic_context": {
+            "booth_number": "11",
+            "constituency": "AC135 - 135",
+            "local_issues": "Inferred from Vellore context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "29",
+            "gender": "F",
+            "location": "Pudur Lane, Namakkal, AC109",
+            "family_status": "Husband of Sankar"
+        },
+        "political_identity": {
+            "party_member": "FALSE (Renewed: FALSE)",
+            "constituency_history": "District: Namakkal. Winner: Nehmat Biswas (AMMK)",
+            "engagement_level": "Low"
+        },
+        "digital_behavior": {
+            "content_preferences": "General news, local updates",
+            "engagement_patterns": "Passive observer, low interaction",
+            "emotional_tendencies": "Neutral"
+        },
+        "geographic_context": {
+            "booth_number": "34",
+            "constituency": "AC109 - 109",
+            "local_issues": "Inferred from Namakkal context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "41",
+            "gender": "M",
+            "location": "Kamaraj St, Karur, AC121",
+            "family_status": "Father of Elumalai"
+        },
+        "political_identity": {
+            "party_member": "TRUE (Renewed: TRUE)",
+            "constituency_history": "District: Karur. Winner: Unknown (Unknown)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "General news, local updates",
+            "engagement_patterns": "Passive observer, low interaction",
+            "emotional_tendencies": "Neutral"
+        },
+        "geographic_context": {
+            "booth_number": "20",
+            "constituency": "AC121 - 121",
+            "local_issues": "Inferred from Karur context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "36",
+            "gender": "F",
+            "location": "Lakshmi Nagar, Dindigul, AC140",
+            "family_status": "Husband of Murugan"
+        },
+        "political_identity": {
+            "party_member": "FALSE (Renewed: FALSE)",
+            "constituency_history": "District: Dindigul. Winner: Unknown (Unknown)",
+            "engagement_level": "Medium"
+        },
+        "digital_behavior": {
+            "content_preferences": "Interested in Clean Streets campaigns, hashtags: #madurai",
+            "engagement_patterns": "Active volunteer. Likes: 26, Retweets: 3",
+            "emotional_tendencies": "High engagement, likely positive sentiment"
+        },
+        "geographic_context": {
+            "booth_number": "10",
+            "constituency": "AC140 - 140",
+            "local_issues": "Inferred from Dindigul context"
+        }
+    },
+    {
+        "demographics": {
+            "age": "30",
+            "gender": "M",
+            "location": "Periyar Road, Tiruppur, AC155",
+            "family_status": "Father of Raghu"
+        },
+        "political_identity": {
+            "party_member": "TRUE (Renewed: TRUE)",
+            "constituency_history": "District: Tiruppur. Winner: Umang Comar (AMMK)",
+            "engagement_level": "High"
+        },
+        "digital_behavior": {
+            "content_preferences": "General news, local updates",
+            "engagement_patterns": "Passive observer, low interaction",
+            "emotional_tendencies": "Neutral"
+        },
+        "geographic_context": {
+            "booth_number": "12",
+            "constituency": "AC155 - 155",
+            "local_issues": "Inferred from Tiruppur context"
+        }
+    }
+]

@@ -1,0 +1,11 @@
+handle,party,followersCount,followingCount,description,displayName,location,userId,totalRecentTweets,viewsPerFollower,engagementPerFollower,avgDailyViews,avgDailyEngagement,followerBucket,totalViews,totalEngagement,viewsPerPost,suppressionScore,suppressionStatus
+poluser1,PMK,15000,800,Political analyst,A. Kumar,Chennai,100101,450,8.2,3.1,2300,450,10K-20K,275500,104500,612,62,Not Suppressed
+citizenvoice,BJP,6400,340,Social issues,S. Gupta,Chennai,100102,320,4.6,1.8,1200,210,5K-10K,29440,11520,92,55,Not Suppressed
+tamiltrend,DMK,12000,1000,Tamil Nadu news,T. Raman,Chennai,100103,410,6.7,2.4,1850,360,10K-20K,32270,11520,78,47,Not Suppressed
+polwatcher,BJP,9200,750,Election tracker,P. Mishra,Chennai,100104,360,5.5,2.7,1090,230,5K-10K,19800,9720,55,60,Suppressed
+cricstatguru,IND,8000,600,Cricket updates,C. Prasad,Chennai,100105,290,3.8,1.1,1850,398,5K-10K,20540,5930,71,39,Not Suppressed
+tn_elector,DMK,11200,850,Poll insights,R. Kumar,Chennai,100106,370,7,2.9,2100,340,10K-20K,25900,10460,70,60,Suppressed
+votetoday,BJP,7000,550,Voter education,V. Joshi,Chennai,100107,280,3.2,1.5,940,215,5K-10K,13920,7080,39,41,Not Suppressed
+southtalk,AIADMK,9200,800,South India opinions,S. Krishnan,Chennai,100108,315,5.9,2.2,1720,330,5K-10K,18585,6930,59,52,Suppressed
+election_data,CPI,10500,425,Data & analysis,D. Mukherjee,Chennai,100109,480,7.6,2.3,1980,430,10K-20K,36480,11480,76,59,Not Suppressed
+voiceofindia,INC,18500,1100,Nation-wide coverage,V. Singh,Chennai,100110,580,9.1,4,2800,510,10K-20K,52780,23200,91,65,Suppressed
