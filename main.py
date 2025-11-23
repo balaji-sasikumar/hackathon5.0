@@ -54,7 +54,7 @@ def read_root():
     return {"message": "FastAPI is running!"}
 
 
-@app.post("/persona/query")
+@app.post("/api/fetch_profiles")
 async def persona_query(req: QueryRequest):
     profile = fetch_profiles_by_constituency(req.constituency)
 
