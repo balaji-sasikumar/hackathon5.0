@@ -46,7 +46,7 @@ def interview_persona(req: ChatRequest):
 
 @app.post("/api/prediction")
 def predict_party_api(req: dict):
-    predicted_result = predict_party(req)
+    predicted_result = predict_party(req["interviewResults"])
     return {"predicted_party": predicted_result}
 
 @app.get("/")
